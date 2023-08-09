@@ -4,8 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-/application.xml
-/application.properties
+
 ### STS ###
 .apt_generated
 .classpath
@@ -15,18 +14,15 @@ build/
 .springBeans
 .sts4-cache
 bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-/application.xml
 /application.properties
+*.yml
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
 ### NetBeans ###
 /nbproject/private/
@@ -37,3 +33,12 @@ out/
 
 ### VS Code ###
 .vscode/
+
+/build/
+!/gradle/wrapper/gradle-wrapper.jar
+!/src/main/**/build/
+!/src/test/**/build/
+!/src/main/**/bin/
+!/src/test/**/bin/
+!/src/main/**/out/
+!/src/test/**/out/
