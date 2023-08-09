@@ -128,6 +128,7 @@ deploy : git, github <br>
 
 
 
+( 내 업소 예약 내역) 
 
 ![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/211904ba-524a-4a88-ba9a-6c692775c437)
 
