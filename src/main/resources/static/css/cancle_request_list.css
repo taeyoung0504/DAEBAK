@@ -1,0 +1,22 @@
+
+#bookingTable {
+     display: none;  
+}
+
+ .grayscale {
+    filter: grayscale(100%);
+  }
+  
+  
+.reject-button{
+	margin-left:5px;
+	background: #ff5454;
+}
+
+
+  .grayscale-button {
+        /* Apply grayscale filter to the button */
+        filter: grayscale(100%);
+    }
+
+

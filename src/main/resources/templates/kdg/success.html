@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>결제 완료</title>
+<style>
+
+	h1 {
+    font-family: "Arial", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* 버튼 디자인 */
+  
+   #kaobtn2 {
+    background: #fee500;
+    color: #000;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  #kaobtn2:hover {
+    background: #ffd900;
+  }
+
+  #kaobtn2:active {
+    background: #ffce00;
+  }
+  
+</style>
+</head>
+<body>
+	<!-- jQueryCDN -->
+	<script src="https://code.jquery.com/jquery-3.7.0.js"
+		integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+		crossorigin="anonymous">
+	</script>
+	
+    <h1> 결제가 정상적으로 완료되었습니다.</h1>
+<h3>결제 상세 정보:</h3>
+
+<table>
+  <tr>
+    <th>항목</th>
+    <th>값</th>
+  </tr>
+  <tr>
+    <td>결제일시</td>
+    <td>[[${book.paymentDate}]]</td>
+  </tr>
+   <tr>
+    <td>주문번호</td>
+   <td id="tid">[[${book.tid}]]</td>
+  </tr>
+  <tr>
+    <td>상품명</td>
+    <td class="item_name">[[${book.roomTitle}]]</td>
+  </tr>
+  <tr>
+    <td>결제금액</td>
+    <td id="amount">[[${book.totalPrice}]]</td>
+  </tr>
+  <tr>
+    <td>결제방법</td>
+    <td>[[${book.payType}]]</td>
+  </tr>
+</table>
+	<br>
+	 <button id="reservebtn" onclick="location.href='/user/mypage/my_booking'">예약내역으로 이동</button>
+    
+</body>
+</html>

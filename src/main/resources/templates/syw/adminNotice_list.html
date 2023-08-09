@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+	<title>DAEBAK</title>
+	<link rel="stylesheet" href="/css/admin_notice.css">
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+	<script th:src="@{/js/adminNoticeList.js}"></script>
+</head>
+
+<body>
+	<html layout:decorate="~{khk/adminNavbar}">
+	<div layout:fragment="adminNav" class="container my-3">
+		<div class="content-container">
+			<h1>공지사항</h1>
+
+
+
+			<button onclick="window.location.href='/admin/createNotice'" class="btn_createNotice">글쓰기</button>
+			<div class="notice_hk">
+				<div th:each="notice : ${page}" class="notice-item">
+					<h3 id="title" th:text="${notice.title}"></h3>
+					<p class="date" th:text="${#temporals.format(notice.createDate, 'yyyy-MM-dd HH:mm')}"></p>
+					<div class="notice-content">
+						<p class="noticeContent" th:utext="${notice.content}"></p>
+						<!-- 이미지 경로를 Thymeleaf 태그로 불러옴 -->
+						<div class="notice_img" th:if="${notice.imagePath}">
+							<img th:if="${notice.imagePath}"
+								th:src="@{/img/notice_img/{imageName}(imageName=${notice.imagePath})}" alt="이미지 없음"
+								width="100%" height="80%" />
+						</div>
+						<div class="notice_btn">
+						<button class="modi_btn"
+							th:onclick="'window.location.href=\'/admin/modify/' + ${notice.id} + '\''">수정</button>
+						<button class="del_btn" th:data-id="${notice.id}">삭제</button>
+					</div>
+					</div>
+				</div>
+				<div class="pagination" th:if="${page.totalElements > 0}">
+					<ul>
+						<li class="page-item" th:if="${page.number > 0}"><a class="page-link" href="#"
+								th:href="@{/admin/adminNoticeList(page=${page.number - 1})}">이전</a>
+						</li>
+						<li th:each="i : ${#numbers.sequence(0, page.totalPages - 1)}"
+							th:class="${i == page.number} ? 'active page-item' : 'page-item'">
+							<a class="page-link" href="#" th:href="@{/admin/adminNoticeList(page=${i})}"
+								th:text="${i + 1}"></a>
+						</li>
+						<li class="page-item" th:if="${page.number < page.totalPages - 1}">
+							<a class="page-link" href="#"
+								th:href="@{/admin/adminNoticeList(page=${page.number + 1})}">다음</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,459 @@
+<!-- 메인 페이지 (제작 중) -->
+<!--   <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a> -->
+<!--   <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a> -->
+
+
+<!-- <th:block sec:authorize="hasRole('ADMIN')"> -->
+<!--             <a class="nav-link" th:href="@{/admin/adminMain}">관리자페이지</a> -->
+<!--          </th:block> -->
+
+
+<!--    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/mypage/me}">마이페이지로</a> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>대구 숙박은 DAE BAK</title>
+</head>
+
+<body>
+<html layout:decorate="~{jjj/header}">
+<div layout:fragment="content" class="container my-3">
+
+	<div class="hk_mainbody">
+		<!-- 슬라이드 -->
+		<div class="jj_slide">
+			<div class="jj_slide_container">
+				<div class="jj_slide-box">
+					<img src="./img/main_jjj/ma-1.jpg">
+				</div>
+				<div class="jj_slide-box">
+					<img src="./img/main_jjj/ma-2.jpg">
+				</div>
+				<div class="jj_slide-box">
+					<img src="./img/main_jjj/ma-3.jpg">
+				</div>
+			</div>
+			<div class="jj_btns">
+				<button class="jj_dot_btn jj_dot_btn_slide-1"></button>
+				<button class="jj_dot_btn jj_dot_btn_slide-2"></button>
+				<button class="jj_dot_btn jj_dot_btn_slide-3"></button>
+			</div>
+		</div>
+
+		<!-- 숙소 카테고리 아이콘 -->
+
+		<div class="jj_icon">
+			<a th:href="@{/tour/daegu_room3?kw5=호텔}"> <span
+				class="fa-solid fa-hotel fa-3x"></span>
+				<p>호텔</p>
+			</a> <a th:href="@{/tour/daegu_room3?kw5=모텔}"> <span
+				class="fa-solid fa-bed fa-3x"></span>
+				<p>모텔</p>
+			</a> <a th:href="@{/tour/daegu_room3?kw5=리조트}"> <span
+				class="fa-solid fa-water-ladder fa-3x"></span>
+				<p>리조트</p>
+			</a> <a th:href="@{/tour/daegu_room3?kw5=펜션}"> <span
+				class="fa-solid fa-tree-city fa-3x"></span>
+				<p>펜션</p>
+			</a> <a th:href="@{/tour/daegu_room3?kw5=게스트하우스}"> <span
+				class="fa-solid fa-house fa-3x"></span>
+				<p>게스트하우스</p>
+			</a>
+		</div>
+
+		<!-- 추천 숙소 
+ <h2 class="main">추천 숙소</h2>
+    <div class="jj_wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="jj_carousel">
+            <img src="./img/main_jjj/rc-1.jpg" alt="첫번째 이미지">
+            <img src="./img/main_jjj/rc-2.jpg" alt="첫번째 이미지">
+            <img src="./img/main_jjj/rc-3.jpg" alt="첫번째 이미지">
+            <img src="./img/main_jjj/rc-4.jpg" alt="첫번째 이미지">
+            <img src="./img/main_jjj/rc-5.jpg" alt="첫번째 이미지">
+            <img src="./img/main_jjj/rc-6.jpg" alt="첫번째 이미지">
+            <img src="./img/main_jjj/rc-1.jpg" alt="첫번째 이미지">
+            <img src="./img/main_jjj/rc-2.jpg" alt="첫번째 이미지">
+            <img src="./img/main_jjj/rc-3.jpg" alt="첫번째 이미지">
+        </div>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+    </div> -->
+
+
+		<h2 class="main">추천 숙소</h2>
+		<div class="jj_wrapper">
+			<div class="jj_carousel">
+				<div class="card-container" id="cardContainer">
+					<i id="left" class="fa-solid fa-angle-left"></i>
+					<div th:each="accommodation : ${acc}" class="card"
+						th:style="'background-image: url(' + ${accommodation.acc_img} + '); background-repeat: no-repeat; background-size: 100% 100%;'">
+						<div class="hk_slidceback">
+							<h2 id="reco_accname" th:text="${accommodation.acc_name}"></h2>
+							<p class="start_reco_acc">
+								<span th:switch="${accommodation.acc_rating}"> <span
+									th:case="1"><span class="orange-star">★</span></span> <span
+									th:case="2"><span class="orange-star">★ ★ ★</span></span> <span
+									th:case="3"><span class="orange-star">★ ★ ★</span></span> <span
+									th:case="4"><span class="orange-star">★ ★ ★ ★</span> </span> <span
+									th:case="5"><span class="orange-star">★ ★ ★ ★ ★</span> </span>
+									<span class="font_kty_acc_rating"
+									th:text="${accommodation.acc_rating}"></span> <span
+									class="money_prive_aver_kty"
+									th:text="${accommodation.acc_averPrice + ' 원'}"></span>
+							</p>
+							<span id="acc_num_kty" th:text="${accommodation.id}"></span>
+						</div>
+					</div>
+					<i id="right" class="fa-solid fa-angle-right"></i>
+				</div>
+			</div>
+		</div>
+
+		<!-- 추천 여행 코스 -->
+		<div class="jj_course">
+			<h2 class="main">Visit DAEGU</h2>
+			<div class="jj_course_container">
+				<ul class="jj_course_m">
+					<li>
+						<h4 class="main">대구 여행 추천 코스</h4> <a
+						th:href="@{/tour/daegu_travel}" target="_self"> <img
+							src=" ./img/main_jjj/cr-1.jpg" alt="추천여행코스">
+					</a>
+					</li>
+
+					<li>
+						<h4 class="main">대구 맛집 소개</h4> <a th:href="@{/tour/daegu_food}"
+						target="_self"> <img src=" ./img/main_jjj/cr-2.jpg" alt="맛집소개"></a>
+					</li>
+
+				</ul>
+			</div>
+
+		</div>
+		<!-- 파트너 관련 -->
+		<div class="jj_partner">
+			<h2 class="main">For Partners</h2>
+			<div class="jj_partner_container">
+				<ul class="jj_partner_m">
+					<li><a th:href="@{/user/mypage/partner_reg}" target="_self">
+							<img src=" ./img/main_jjj/cn-1.jpg" alt="파트너 신청하기">
+					</a></li>
+
+					<li><a th:href="@{/user/mypage/my_partner_reg}" target="_self">
+							<img src=" ./img/main_jjj/cn-2.jpg" alt="숙소 등록하기">
+					</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- 푸터 .-->
+	<footer>
+		<div class="jj_align">
+			<ul class="jj_link">
+				<li>회사소개<span>|</span></li>
+				<li>이용약관<span>|</span></li>
+				<li>개인정보처리방침<span>|</span></li>
+				<li>소비자 분쟁해결 기준<span>|</span></li>
+				<li>사업자 정보확인<span>|</span></li>
+				<li>액티비티 호스트센터<span>|</span></li>
+				<li>경상도숙박장사<span>|</span></li>
+				<li>콘텐츠산업진흥법에 의한 표시<span>|</span></li>
+				<li>마케팅센터<span>|</span></li>
+			</ul>
+			<p>
+				<b>고객 센터 0000-0000</b> <span>9:00 - 18:00(평일)</span>
+			</p>
+			<address>
+				<span>DAEBAK</span> 주소 : 대구시 서대구로7길 2 <br> 통신판매번호 : 0000 |
+				관광사업자 등록번호 : 0000 | 전화번호 : 0000-0000 | 호스팅 : 00000 <span
+					class="jj_order"> 경상도숙박장사는 통신판매중개자로서 통신판매의 당사자가 아니며, 상품의 예약,
+					이용 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다. </span> <br> Copyright GC
+				COMPANY Corp. All rights reserved.
+			</address>
+
+
+		</div>
+
+	</footer>
+	<!-- defer : 페이지가 모두 로드된 후에 해당 외부 스크립트가 실행  -->
+
+
+	</body>
+
+	<style>
+.money_prive_aver_kty {
+	position: absolute;
+	color: #232323;
+	/* top: 0; */
+	width: 100px;
+	/* left: 170px; */
+	font-weight: 700;
+	/* top: 40px; */
+	width: 100px;
+	/* left: 170px; */
+	bottom: 5px;
+	text-align: right;
+	float: right;
+	margin-left: 148px;
+	font-size: 20px;
+}
+
+.font_kty_acc_rating {
+	color: #757575;
+	font-size: 15px;
+	position: absolute;
+	/* right: 10px; */
+	left: 12px;
+	/* margin-top: 10px; */
+	top: 50px;
+}
+
+.jj_wrapper2 {
+	overflow-x: hidden;
+	/* 	margin-bottom: -100px; */
+	overflow-y: hidden;
+}
+
+#reco_accname {
+	font-size: 20px;
+	margin: 10px;
+	color: #232323;
+	top: 0px;
+	position: absolute;
+	font-weight: 300;
+}
+
+.jj_carousel2 {
+	margin-bottom: 50px;
+	margin-left: 330px;
+	width: 1200px;
+	height: 300px;
+	padding-top: 50px;
+	overflow: hidden;
+}
+
+.card-container {
+	overflow-y: hidden;
+	/* 	border-radius: 10px; */
+	/* 	margin-left: 80px; */
+	width: 1040px;
+	height: 280px;
+	/* 	margin-top: -50px; */
+	display: flex; /* Use flex to align cards horizontally */
+	gap: 20px;
+	padding-left: 0;
+	overflow-x: scroll; /* Enable horizontal scrolling */
+	scroll-behavior: smooth; /* Add smooth scrolling effect */
+	cursor: grab; /* Change cursor to indicate grabbing */
+	scrollbar-width: none; /* Hide the scrollbar on Firefox */
+	-ms-overflow-style: none; /* Hide the scrollbar on IE/Edge */
+}
+
+.card-container::-webkit-scrollbar {
+	display: none; /* Hide the scrollbar on Chrome, Safari, and Opera */
+}
+
+::selection {
+	background-color: transparent;
+}
+
+/* 드래그 중인 텍스트 스타일 변경 (옵션) */
+::-moz-selection {
+	background-color: transparent;
+}
+
+::-webkit-selection {
+	background-color: transparent;
+}
+
+::-ms-selection {
+	background-color: transparent;
+}
+
+.stop-dragging {
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.reco_price_kty {
+	color: red;
+}
+
+.card {
+	/* 	margin-bottom: 50px; */
+	position: relative; /* 위치를 상대적으로 설정합니다. */
+	display: inline-block;
+	color: white;
+	background-color: rgb(246, 246, 246);
+	/* padding: 20px; */
+	/* 	border-radius: 8px; */
+	width: 260px;
+	/* 	height: 300px; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	white-space: normal;
+	flex-shrink: 0;
+	box-shadow: 5px 5px 3px #cbcbcb;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.card h2 {
+	font-size: 20px;
+}
+
+.card p {
+	/* position: absolute; */ /* 위치를 절대적으로 설정합니다. */
+	/* bottom: 10px; */ /* 하단 여백을 조정하여 이미지 위에 배치합니다. */
+	/* left: 10px; */ /* 왼쪽 여백을 조정하여 이미지 위에 배치합니다. */
+	z-index: 1; /* 다른 요소보다 더 위에 배치합니다. */
+	color: white; /* 텍스트 색상을 설정합니다. */
+	font-size: 18px; /* 원하는 크기로 폰트 크기를 설정합니다. */
+	/* 추가적인 스타일링을 원하면 여기에 추가하세요. */
+}
+
+#acc_num_kty {
+	position: absolute; /* 위치를 절대적으로 설정합니다. */
+	top: 30px; /* 상단 여백을 조정하여 이미지 위에 배치합니다. */
+	left: 10px; /* 왼쪽 여백을 조정하여 이미지 위에 배치합니다. */
+	z-index: 1; /* 다른 요소보다 더 위에 배치합니다. */
+	color: white; /* 텍스트 색상을 설정합니다. */
+	font-size: 16px; /* 원하는 크기로 폰트 크기를 설정합니다. */
+	/* 추가적인 스타일링을 원하면 여기에 추가하세요. */
+	display: none;
+}
+
+.hk_slidceback {
+	background-color: #f9f9f9e3;
+	bottom: 0;
+	top: 95px;
+	position: relative;
+	width: 100%;
+	height: 90px;
+	/* margin-top: 113px; */
+	float: inherit;
+	border-radius: 0 0 5px;
+	margin-bottom: 10px;
+}
+
+.jj_carousel {
+	overflow: hidden;
+}
+
+.card.visible {
+	display: block;
+}
+
+/* Remove left margin for the first card */
+.card:first-child {
+	margin-left: 0;
+}
+
+.orange-star {
+	color: orange;
+	position: absolute;
+	left: 10px;
+	top: 33px;
+	text-shadow: 1px 1px 1px #777777;
+}
+</style>
+	<script>
+
+// JavaScript code to handle continuous horizontal scrolling
+
+  // JavaScript code to handle continuous circular horizontal scrolling
+  document.addEventListener('DOMContentLoaded', function () {
+    const cardContainer = document.querySelector('.card-container');
+    const cards = document.querySelectorAll('.card');
+    const totalCards = cards.length;
+    const cardWidth = cards[0].offsetWidth;
+    const scrollInterval = 5; // Adjust the scrolling speed
+
+    let isScrolling = false;
+    let startPoint = 0;
+
+    // Function to loop scroll position between 0 and totalCards * cardWidth
+    function adjustScrollPosition(scrollAmount) {
+      cardContainer.scrollLeft += scrollAmount;
+
+      if (cardContainer.scrollLeft < 0) {
+        cardContainer.scrollLeft += totalCards * cardWidth;
+      } else if (cardContainer.scrollLeft >= totalCards * cardWidth) {
+        cardContainer.scrollLeft -= totalCards * cardWidth;
+      }
+    }
+
+    // Event listener to start scrolling when the mouse button is pressed
+    cardContainer.addEventListener('mousedown', (e) => {
+      isScrolling = true;
+      startPoint = e.clientX;
+    });
+
+    // Event listener to stop scrolling when the mouse button is released
+    document.addEventListener('mouseup', () => {
+      isScrolling = false;
+    });
+
+    // Event listener for mousemove to handle scrolling
+    cardContainer.addEventListener('mousemove', (e) => {
+      if (isScrolling) {
+        const scrollAmount = (e.clientX - startPoint) * scrollInterval;
+        startPoint = e.clientX;
+        adjustScrollPosition(scrollAmount);
+      }
+    });
+
+    // Event listener for touchmove to handle scrolling on touch devices
+    cardContainer.addEventListener('touchmove', (e) => {
+      e.preventDefault(); // Prevent page scrolling on touch devices
+      if (isScrolling) {
+        const scrollAmount = (e.touches[0].clientX - startPoint) * scrollInterval;
+        startPoint = e.touches[0].clientX;
+        adjustScrollPosition(scrollAmount);
+      }
+      
+      
+    });
+  });
+  
+  
+  document.addEventListener("DOMContentLoaded", function() {
+	    const cards = document.querySelectorAll(".card");
+	    cards.forEach(function(card) {
+	      card.addEventListener("click", function() {
+	        const id = card.querySelector("#acc_num_kty").textContent;
+	        const url = `/tour/product/detail/${id}`;
+	        window.location.href = url;
+	      });
+	    });
+	  });
+  
+  
+  
+  /* 구분자 */
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const moneyPriveAverElements = document.querySelectorAll(".money_prive_aver_kty");
+
+    moneyPriveAverElements.forEach(function (element) {
+        const price = parseInt(element.textContent);
+        const formattedPrice = formatNumberWithCommas(price);
+        element.textContent = formattedPrice + " 원";
+    });
+});
+
+function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script>
+</html>
