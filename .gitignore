@@ -14,8 +14,6 @@ build/
 .springBeans
 .sts4-cache
 bin/
-/application.properties
-/application.yml
 
 ### IntelliJ IDEA ###
 .idea
@@ -42,3 +40,8 @@ out/
 !/src/test/**/bin/
 !/src/main/**/out/
 !/src/test/**/out/
+
+
+
+application.yml
+application.properties
