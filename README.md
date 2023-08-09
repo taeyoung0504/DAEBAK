@@ -132,3 +132,11 @@ deploy : git, github <br>
 
 ![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/211904ba-524a-4a88-ba9a-6c692775c437)
 
+
+
+# 기타 페이지 
+
+
+(대구 맛집 공공데이터를 이용한 식당 검색 페이지)
+
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/a29b36b5-5932-49fd-b409-c44e1b601a6f)
