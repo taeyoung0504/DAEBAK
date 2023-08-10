@@ -160,3 +160,9 @@ deploy : git, github <br>
 (회원 관리_등급, 계정잠금 설정 가능)
 ![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/300c1176-a094-4902-92dc-1c5872218783)
 ![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/b94b8fa1-c51a-411b-801a-1b03e2114f8a)
+
+
+(등록 업체 관리)
+
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/be04e730-55d0-4785-8d0f-a0cc646626d3)
+
