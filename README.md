@@ -54,12 +54,12 @@ deploy : git, github <br>
 
 # 프로젝트 결과 화면(요약) // 내용 추가 중
 
-## [숙소 메인]
+##  [숙소 메인]
 
 ![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/87a4e188-deb3-45f6-a61e-6b6a575d17cf)
 
 
-##[로그인 페이지]
+## [로그인 페이지]
 
 ![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/4f137c76-5347-47a7-87fb-b1dcb2f3b6ee)
 
