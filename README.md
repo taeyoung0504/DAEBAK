@@ -58,6 +58,16 @@ deploy : git, github <br>
 
 ![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/87a4e188-deb3-45f6-a61e-6b6a575d17cf)
 
+
+##[로그인 페이지]
+
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/4f137c76-5347-47a7-87fb-b1dcb2f3b6ee)
+
+##[회원가입 페이지] 
+
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/bb06df37-35e2-4512-b1e6-5ff947c746ca)
+
+
 ## [숙소 검색 페이지]
 
 ![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/64b0c0e1-e507-4e5a-b45c-adda6bb398c1)
@@ -179,3 +189,5 @@ deploy : git, github <br>
 (결제 취소 요청 처리)
 
 ![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/f4209880-9b68-4386-bf62-e43c0a8ca1ac)
+
+
