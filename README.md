@@ -74,6 +74,7 @@ SpringBoot와 Spring MVC 패턴을 기반으로 제작한 <br><br>
 
 3. 각 숙박 업소 유형별 접근 가능 (모텔, 호텔, 리조트 , 펜션, 게스트하우스)
 
+4. 채널톡 API를 통한 실시간 채팅 가능 
 
 [마이페이지]
 
@@ -138,7 +139,8 @@ SpringBoot와 Spring MVC 패턴을 기반으로 제작한 <br><br>
 
 ##  [숙소 메인]
 
-![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/87a4e188-deb3-45f6-a61e-6b6a575d17cf)
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/f77c6f9b-e1c6-4c97-ade5-b90c44623df1)
+
 
 
 ## [로그인 페이지]
