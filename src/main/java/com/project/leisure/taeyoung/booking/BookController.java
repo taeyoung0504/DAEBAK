@@ -77,7 +77,6 @@ private final PaymentService paymentService;
 
 		BookingVO bookingvo = new BookingVO();
 
-//		TotalPrice total = new TotalPrice();
 		
 		
 
@@ -90,15 +89,7 @@ private final PaymentService paymentService;
 
 		String totalPrice1 = null;
 
-//		List<TotalPrice> totalArrays = totalPriceRepository.findByTotalPrice(totalPrice);
-//		for (TotalPrice totals : totalArrays) {
-//			if (totalPrice.equals(totals.getTotalPrice())) {
-//				totalPrice1 = totalPrice;
-//				break;
-//			} else {
-//				totalPrice1 = null;
-//			}
-//		}
+
 
 		// request로 받은 값들 예약객체에 넣기 // -> build 써야하나? -> 몇몇 정보만 넣고 싶다.
 		bookingvo.setBookerID("username"); // principal 넣어야함.
@@ -108,7 +99,6 @@ private final PaymentService paymentService;
 		bookingvo.setCheckin(date1);
 		bookingvo.setCheckOut(date2);
 		bookingvo.setBookHeadCount(4);
-//		bookingvo.setTotalPrice(totalPrice1);
 		bookingvo.setTotalPrice(totalPrice);
 		bookingvo.setTempRoomId(product.getProduct_id());
 		bookingvo.setTempAccomId(product.getAccommodation().getId());
@@ -122,15 +112,11 @@ private final PaymentService paymentService;
 //첫 번째 객체의 이미지 URL을 출력
 		System.out.println("First Image URL: " + firstImageUrl);
 
-//		String img = (String) selectedImage;
 
 		bookingvo.setProductImg(firstImageUrl);
 
 		String name = "" + id; // 꺼내 쓸 땐 equals로 넘어온 id값과 비교하여 session객체 가져오고 parseInt로 바꿔서 사용.
-		// 더 효율적인 방법 찾아보기
-
-		// session에 예약 객체 담기 => name값은 넘겨받은 객실 id(임시) -> 이후 예약이 완료되었으면 해당 id의 세션을 삭제해야함?
-		// -> 안해도 될듯?(같은 객실id가 있기때문)
+		
 		HttpServletRequest request = params;
 		HttpSession session = request.getSession();
 		session.setAttribute(name, bookingvo);
@@ -181,11 +167,10 @@ private final PaymentService paymentService;
 
 		bookingVO.setProduct(product);
 		bookingVO.setAccommodation(accommodation);
-//		bookingVO.setBookerName(params.getParameter(username));
-//		String userID = (String) session.getAttribute("submarine");
+
 
 		if (bookingVO == null) {
-			// bookingVO가 세션에 없는 경우 적절한 예외를 던져버리기~
+		
 			throw new DataNotFoundException("bookingVO not found - 왜 없노");
 		}
 		log.info("INFO {}", "============================" + bookingVO.toString());
@@ -225,14 +210,11 @@ private final PaymentService paymentService;
 					throws IOException {
 //		log.info("INFO {}", params);
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@" + id);
-//		@AuthenticationPrincipal Users principal
-		// 세션에서 현재 로그인한 사람의 로그인 아이디도 가져와야함.
+
 		String username = principal.getName();
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@" + username);
 		
-//		Users user = 
-		
-//		String email = principal.getEmail();
+
 		
 		String realName = paymentReqDto.getCustomerName();
 		
@@ -268,11 +250,10 @@ private final PaymentService paymentService;
 		bookingVO.setProduct(product);
 		bookingVO.setAccommodation(accommodation);
 		bookingVO.setTid(paymentResDto.getOrderId());
-//		bookingVO.setBookerName(params.getParameter(username));
-//		String userID = (String) session.getAttribute("submarine");
+
 		
 		if (bookingVO == null) {
-			// bookingVO가 세션에 없는 경우 적절한 예외를 던져버리기~
+			// bookingVO가 세션에 없는 경우 적절한 예외 처리
 			throw new DataNotFoundException("bookingVO not found - 왜 없노");
 		}
 		log.info("INFO {}", "============================" + bookingVO.toString());

@@ -31,7 +31,7 @@ public class KakaoPayService {
 		 */
 		// 카카오페이 요청 양식
 		MultiValueMap<String, Object> payParams = new LinkedMultiValueMap<>();
-		// 결제수단 추가하나?
+
 
 		String stringTotalPrice = params.getTotalPrice();
 		String totalPrice = stringTotalPrice.replaceAll(",", "");
@@ -44,7 +44,6 @@ public class KakaoPayService {
 		payParams.add("total_amount", Integer.parseInt(totalPrice));
 		payParams.add("vat_amount", 200);
 		payParams.add("tax_free_amount", 200);
-		// 계속 에러가 발생해서 https를 http로 바꿔주었음 - 노션에 정리
 
 
 //		payParams.add("approval_url", "http://localhost:8080/success"); // 결제승인시 넘어갈 url
@@ -61,10 +60,8 @@ public class KakaoPayService {
 		// 외부에 보낼 url
 		RestTemplate template = new RestTemplate();
 		String url = "https://kapi.kakao.com/v1/payment/ready";
-//		String url = "http://kapi.kakao.com/v1/payment/ready";
 
 		// 요청결과
-//		KakaoReadyResponseVO res = template.postForObject(url, requestEntity, KakaoReadyResponseVO.class);
 		res = template.postForObject(url, requestEntity, KakaoReadyResponseVO.class);
 
 		/*
@@ -82,9 +79,8 @@ public class KakaoPayService {
 		// 카카오 요청
 		MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
 		parameters.add("cid", String.valueOf(cid));
-		parameters.add("tid", res.getTid()); // model로 받으면 res.getTid()가 아니고 model.getTid()가 될 것. -> 근데 굳이 그렇게 안줘도 될듯
-		parameters.add("partner_order_id", "KAO20230623"); // partner order id는 굳이 바꿔줄 필요 없나? 아니면 따로 제품마다 해줘야하나? ->
-															// 해줘야하면 model받아야함.
+		parameters.add("tid", res.getTid()); // model로 받으면 res.getTid()가 아니고 model.getTid()가 될 것
+		parameters.add("partner_order_id", "KAO20230623"); 
 		parameters.add("partner_user_id", "kakaopayTest");
 		parameters.add("pg_token", pgToken);
 
@@ -101,23 +97,10 @@ public class KakaoPayService {
 		return approveResponse;
 	}
 
-	/**
-	 * 결제 환불
-	 */
-	// 취소하고자하는 상품의 id를 받아서 데이터를 조회하고 조회한 데이터를 model에 담아 취소 서비스에 넘긴다.
-	// 취소 서비스에서 model에서 받은 tid와 금액을 추출하여 취소요청을 보낸다.
-	// -> 그런데 해당 결제수단을 if문으로 검사하여 해당 결제수단의 서비스로 보내줘야 할듯
+
+
 	public KakaoCancelResponse kakaoCancel(Map<String, Object> params) {
 
-		/*
-		 * System.out.println(")))))))))))))))))))))))))) amount : " +
-		 * params.get("cancel_amount")); String amount =
-		 * String.valueOf(params.get("cancel_amount"));
-		 * System.out.println(")))))))))))))))))))))))))) amount : " + amount); String
-		 * cancelAmount = amount.replaceAll(",", "");
-		 * System.out.println(")))))))))))))))))))))))))) cancelAmount : " +
-		 * cancelAmount);
-		 */
 
 		String cancelAmountStr = params.get("cancel_amount").toString();
 		cancelAmountStr = cancelAmountStr.trim();
@@ -150,10 +133,7 @@ public class KakaoPayService {
 
 		httpHeaders.set("Authorization", auth);
 		httpHeaders.set("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-		// headers.add("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
-		// headers.add("Content-Type", MediaType.APPLICATION_FORM_URLENCODED_VALUE +
-		// ";charset=UTF-8");
-
+		
 		return httpHeaders;
 	}
 

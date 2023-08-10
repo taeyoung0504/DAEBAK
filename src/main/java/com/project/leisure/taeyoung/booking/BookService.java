@@ -126,8 +126,7 @@ public class BookService {
         return false;
     }
 	
-	
-	// 이거 안쓰는 코드 인듯
+
 	public Room getRoom(int id) {
 
 		Optional<Room> room = this.roomRepository.findById(id);
@@ -138,7 +137,7 @@ public class BookService {
 		}
 	}
 
-	// 유리 추가 Tid 로 해당 bookVo를 조회하여 넘겨준다
+	// Tid 로 해당 bookVo를 조회하여 넘겨준다
 	public Optional<BookingVO> findBookTid(String tid) {
 		return bookRepository.findByTid(tid);
 	}

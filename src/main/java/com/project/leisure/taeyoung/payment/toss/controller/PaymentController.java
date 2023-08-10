@@ -54,21 +54,11 @@ public class PaymentController {
     	paymentResDto.setSuccessUrl(paymentReqDto.getYourSuccessUrl() == null ? tossPaymentConfig.getSuccessUrl() : paymentReqDto.getYourSuccessUrl());
         
     	paymentResDto.setFailUrl(paymentReqDto.getYourFailUrl() == null ? tossPaymentConfig.getFailUrl() : paymentReqDto.getYourFailUrl());
-        
-//    	return ResponseEntity.ok().body(new SingleResponse<>(paymentResDto));
+
     	return ResponseEntity.ok().body(paymentResDto);
     }
     
-//    @GetMapping("/toss/success")
-//    public ResponseEntity<PaymentSuccessDto> tossPaymentSuccess(
-//            @RequestParam String paymentKey,
-//            @RequestParam String orderId,
-//            @RequestParam Long amount
-//    ) {
-//
-//        return ResponseEntity.ok().body(paymentService.tossPaymentSuccess(paymentKey, orderId, amount));
-//    }
-    
+
     @GetMapping("/toss/success")
     public String tossPaymentSuccess(
             @RequestParam String paymentKey,
@@ -96,31 +86,6 @@ public class PaymentController {
 		
 		return "kdg/success";
     }
-    
-    
-//    @PostMapping("/toss/cancel")
-//    public CancelPaymentDto tossPaymentCancelPoint(
-//    		@RequestBody Map<String, String> requestParams
-//    ) {
-//        
-//    	String paymentKey = requestParams.get("paymentKey");
-//        String cancelReason = requestParams.get("cancelReason");
-//    	
-//    	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! paymentKey : " + paymentKey);
-//    	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! cancelReason : " + cancelReason);
-//    	
-//    	CancelPaymentDto cres = paymentService.tossPaymentCancel(paymentKey, cancelReason);
-//    	
-//    	String tid = paymentKey;
-//    	String status = cres.getStatus();
-//    	String canceled_at = cres.getApprovedAt();
-//    	System.out.println("!!!!!!!!!!!!!!!!!!!!!!!! canceled_at : " + canceled_at);
-//    	bookService.updateCancel(tid, status, canceled_at);
-//    	
-////    	model.addAttribute("info", cres);
-//    	
-//    	return cres;
-//    }
     
     
     

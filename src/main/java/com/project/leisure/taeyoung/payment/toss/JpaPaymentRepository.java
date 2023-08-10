@@ -11,5 +11,4 @@ public interface JpaPaymentRepository extends JpaRepository<Payment, Long> {
 	
     Optional<Payment> findByPaymentKeyAndCustomer_Email(String paymentKey, String email);
     
-//    Slice<Payment> findAllByCustomer_Email(String email, Pageable pageable);
 }

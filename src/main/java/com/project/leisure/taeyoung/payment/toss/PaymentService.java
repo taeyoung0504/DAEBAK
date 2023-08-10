@@ -46,23 +46,13 @@ public class PaymentService {
 	    }
 	
 	public Payment requestTossPayment(Payment payment, String userName) {
-//        List<Users> users = userService.check(userName);
-//        
-//        Users user;
-//        
-//        for(Users user1: users) {
-//        	if(user1.getUsername().equals(userName)) {
-//        		user = user1;
-//        		break;
-//        	}
-//        }
-		
+
 		Users user = userListService.getUserByUsername(userName).get();
 		
         if (payment.getAmount() < 1000) {
         	throw new CustomLogicException(ExceptionCode.INVALID_PAYMENT_AMOUNT);
         }
-//        payment.setCustomer(user);
+
         payment.setCustomer(user);
         return paymentRepository.save(payment);
     }

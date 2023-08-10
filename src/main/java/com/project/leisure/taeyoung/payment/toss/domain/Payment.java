@@ -27,10 +27,7 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-//@Table(indexes = {
-//        @Index(name = "idx_payment_member", columnList = "customer"),
-//        @Index(name = "idx_payment_paymentKey", columnList = "paymentKey"),
-//})
+
 public class Payment {
 	
 	@Id
@@ -76,21 +73,13 @@ public class Payment {
                 .orderName(orderName)
                 .orderId(orderId)
                 .customerEmail(customer.getEmail())
-//                .customerName(customer.getName())
-//                .createdAt(String.valueOf(getCreatedAt()))
                 .createdAt(LocalDateTime.now())
                 .cancelYN(cancelYN)
                 .failReason(failReason)
                 .build();
     }
 
-//	private char[] getCreatedAt() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
-    
-    
     
     
     

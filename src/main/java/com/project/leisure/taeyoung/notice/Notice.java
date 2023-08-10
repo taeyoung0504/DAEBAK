@@ -46,13 +46,6 @@ public class Notice {
         this.createDate = LocalDateTime.now();
     }
     
-//    public Notice(String title, String username, String content) {
-//        this.title = title;
-//        this.username = username;
-//        this.content = content;
-//        this.createDate = LocalDateTime.now();
-//    }
-//    
-    
+
 	
 }
