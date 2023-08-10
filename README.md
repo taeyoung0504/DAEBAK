@@ -148,4 +148,15 @@ deploy : git, github <br>
 ![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/b9b4b194-a148-4f83-925a-4584c5189f66)
 
 
+(공지사항)
 
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/48162033-fcbd-49dc-a2f9-ab4ba5e954c1)
+
+(공지사항_등록)
+
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/02907a57-10ee-4c3b-899c-571560ae17cc)
+
+
+(회원 관리_등급, 계정잠금 설정 가능)
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/300c1176-a094-4902-92dc-1c5872218783)
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/b94b8fa1-c51a-411b-801a-1b03e2114f8a)
