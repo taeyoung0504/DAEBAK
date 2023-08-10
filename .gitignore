@@ -42,6 +42,6 @@ out/
 !/src/test/**/out/
 
 
-
+foot_test.html
 application.yml
 application.properties
