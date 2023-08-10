@@ -166,3 +166,16 @@ deploy : git, github <br>
 
 ![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/be04e730-55d0-4785-8d0f-a0cc646626d3)
 
+
+(파트너 권한 신청 내역 관리)
+
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/603fbdd9-06b8-4508-881c-ec87ada0b101)
+
+
+(1:1 문의 관리)
+
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/37ef0b73-be38-496f-abfb-948f95ecd55d)
+
+(결제 취소 요청 처리)
+
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/f4209880-9b68-4386-bf62-e43c0a8ca1ac)
