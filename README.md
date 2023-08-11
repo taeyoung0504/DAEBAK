@@ -60,6 +60,9 @@ SpringBoot와 Spring MVC 패턴을 기반으로 제작한 <br><br>
 
 ##  기능 (상세) 
 
+![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/ee73fb91-bbef-4d3b-b400-d29cf8474eda)
+
+
 [로그인]
 1. 로그인 기능 -> 일반 로그인 , 소셜로그인(네이버,카카오)
     -  로그인의 경우 Spring Security와 OAuth2 를 이용하여 구현.
