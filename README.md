@@ -15,14 +15,11 @@ SpringBoot와 Spring MVC 패턴을 기반으로 제작한 <br><br>
 개발환경은 아래와 같음. <br><br>
 ![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/8d6486eb-9021-436f-89d2-0512d0c56548)
 
+<strong>#etc </strong> <br>
+tools : tst4 ,  vscode, DBeaver <br>
 
-# Common
-  <a href="#"><img src="https://img.shields.io/badge/git-E84E32?style=plastic&logo=git&logoColor=white"/></a>
+deploy : git, github <br>
 
-<a href="#"><img src="https://img.shields.io/badge/RESTful API-415296?style=plastic&logoColor=white"/></a>
-
-# Communication  
- <a href="#"><img src="https://img.shields.io/badge/github-1B1E23?style=plastic&logo=github&logoColor=white"/></a>
 
 
 <br>
@@ -54,227 +51,163 @@ SpringBoot와 Spring MVC 패턴을 기반으로 제작한 <br><br>
 
 ![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/10e1ade4-b17f-4fcf-a083-7c3a9175d7e8)
 
+# 기능소개
+
+
+## [USER]
 
 
 
+### ✔대구 여행 추천 코스
 
-##  기능 (상세) 
-
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/ee73fb91-bbef-4d3b-b400-d29cf8474eda)
-
-
-[로그인]
-1. 로그인 기능 -> 일반 로그인 , 소셜로그인(네이버,카카오)
-    -  로그인의 경우 Spring Security와 OAuth2 를 이용하여 구현.
-2.  회원 가입
-    - ID,PW, 주소, 이메일, 이메일 인증번호을 통한 회원가입 진행
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/131851352/830ab52d-940b-4bb8-bbd7-131c9f286b55" alt="관광지 검색 gif" width="65%" align="left"/>
 
 
-[메인 페이지]
-1. 공공데이터를 이용한 맛집, 여행지 소개 페이지 , 대구 날씨 안내 구현
+#### 대구 여행 추천 코스에서 원하는 장소를 선택하면 지도에 위치가 표시됩니다.
+#### 원하는 장소를 클릭하면 그 관광지에 대한 정보들과 길찾기, 홈페이지로 이동할 수 있는 기능을 제공합니다.
 
-2. 숙소 평점이 높은 순으로 추천숙소 top 8 정렬
+<br clear="both"/>
+<br>
 
-3. 각 숙박 업소 유형별 접근 가능 (모텔, 호텔, 리조트 , 펜션, 게스트하우스)
+### ✔맛집 검색
 
-4. 채널톡 API를 통한 실시간 채팅 가능 
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/131851352/dcce3624-d3e7-4113-925f-8d778ca751b6" alt="맛집 검색 gif" width="65%" align="left"/>
 
-[마이페이지]
+#### 키워드를 검색하거나 필터 기능을 사용해서 내가 원하는 맛집의 정보를 얻을 수 있습니다.
 
-1. 내 비밀번호, 주소 수정 가능
-  - 비밀번호의 경우 기존비밀번호, 새 비밀번호, 새 비밀번호 확인을 통한 입력값 검증 필수
-2. 내가 예약한 숙소에 대한 예약 내역 확인 가능
-  - 예약 취소, 예약내역 삭제 가능
-  - 이용 전, 이용 중, 예약 취소, 이용완료 를 통한 상태 표시
+<br clear="both"/>
+<br>
 
-3. 내 업소 등록을 위한 파트너 권한 신청 폼 구현
+### ✔숙소 검색
 
-4. 내가 등록한 숙소에 대한 파트너 신청 결과 확인 및
-   권한 획득 시 내가 입력한 값으로만 숙소를 등록할 수 있도록 입력값 변조 방지
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/131851352/f6820015-8b0a-4683-8526-0f7916f1e348" alt="숙소 검색 gif" width="65%" align="left"/>
 
-5. 내가 등록한 업소 및 업소에 있는 객실에 대한 CRUD 구현
+#### 원하는 숙박 유형을 선택하고 들어가면 선택한 숙소들의 리스트를 볼 수 있습니다.
+#### 필터 기능을 사용하여 본인이 원하는 조건을 선택해서 숙소를 선택할 수 있습니다.
 
-[ 예약 & 결제 & 리뷰]
-1. 사용자의 검색 및 필터에 맞는 숙박업소 검색 기능 구현
-    - 키워드, 날짜, 구역, 인원 수 , 최소~최대 금액 , 후기(평점) 을 통한 검색 
-2. 카카오 페이 , 토스 API 를 이용한 더미 결제와 결제 취소 기능 구현
-3. 카카오맵 API를 이용한 숙박업소 위치 표시
-4. 리뷰 작성 및 신고 기능 구현
-   - 한 예약 건 당 1회 리뷰 작성 가능
-   - 한 리뷰 내용에 대해 1회만 신고 가능
-   - 누적 신고 횟수가 5회 이상일 시 해당 리뷰 블라인드 처리
+<br clear="both"/>
+<br>
 
-5. 숙박업소 이용 1일전 까지 결제 취소 가능
-    
-6.  파트너의 경우 임의 예약 취소 불가능
-    - 별도 신청을 통해 관리자 승인 시 예약 취소 가능
+### ✔숙소 상세 페이지
 
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/131851352/bc8e6cab-4a93-46f9-bc1e-6e575b4f7b6a" alt="숙소 검색 gif" width="65%" align="left"/>
 
+#### 원하는 숙소를 선택해서 숙소 예약을 진행 할 수 있습니다.
+#### 선택한 숙소에 대한 숙소 정보와 리뷰들을 볼 수 있습니다.
 
+<br clear="both"/>
+<br>
 
+### ✔결제
 
-[관리자 페이지]
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/131851352/eacdf3bc-f38d-4092-8aba-7fce26ca89ac" alt="숙소 검색 gif" width="65%" align="left"/>
 
-1. 대시보드를 통한 권한별(일반회원,파트너,관리자) 회원 수, 일일 접속자 수, 숙소 등록 현황, 금일 예약 및 순매출액, 취소 건 수 및 총 취소금액 확인 가능
+#### 원하는 숙소를 선택해 원하시는 결제 유형을 선택해 예약을 진행할 수 있습니다.
 
-2. 회원 리스트를 통한 회원 관리 가능
-   - 회원 권한 변경 가능
-   - 회원 정보 수정 가능
-   - 회원 계정 정지 가능
-     
-3. 등록된 숙박업소에 대한 관리
-   - 숙박업소 삭제 가능
-  
-4. 파트너 신청 내역 확인 및 관리
-   - 승인 , 반려를 통한 각 회원별 파트너 권한 신청 관리 가능
-  
-5.  예약 취소 요청 처리
-   - 파트너가 요청한 숙박업소 예약 취소 요청에 대한 처리 가능
-   -  취소, 거절을 통해 예약취소 요청 처리
+<br clear="both"/>
+<br>
 
+### ✔리뷰
+
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/131851352/3856e42d-1fe5-4f63-8380-db19b5c01bef" alt="숙소 검색 gif" width="65%" align="left"/>
+
+#### 숙소를 이용한 후 숙소에 대한 리뷰를 작성할 수 있습니다.
+
+<br clear="both"/>
 <br>
 
 
 
+## [PATNER]
 
+### ✔파트너 신청
 
-# 프로젝트 결과 화면(요약) // 이미지 추가 중
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/118175453/5b86d5b2-fd1b-49a6-bb92-4fa965c618f0" alt="파트너-신청 gif" width="65%" align="left"/>
 
-##  [숙소 메인]
+#### 신청 시 업체명, 업체 주소, 인감증명서(pdf), 담당자명, 담당자 연락처, 업총, 지역 을 입력 및 선택하여 신청가능 합니다.
+#### 파트너 신청하기를 누르면 신청이 완료 되며 파트너 신청 내역 페이지로 이동됩니다.
+#### 신청 대기, 승인, 반려는 파트너 신청 내역에 가서 확인 가능합니다.
 
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/f77c6f9b-e1c6-4c97-ade5-b90c44623df1)
+<br clear="both"/>
+<br>
 
+### ✔숙박업소 등록
 
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/118175453/fefc4b28-cad2-4bb2-b17d-7db3b82de50a" alt="파트너-신청 gif" width="65%" align="left"/>
 
-## [로그인 페이지]
+#### 신청상태가 승인되면 숙박업소를 등록할 수 있습니다.
+#### *(별표기호) 가 표시되어 있는 항목만이 작성 가능합니다.
 
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/4f137c76-5347-47a7-87fb-b1dcb2f3b6ee)
+<br clear="both"/>
+<br>
 
-##[회원가입 페이지] 
+### ✔상품(객실) 등록
 
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/bb06df37-35e2-4512-b1e6-5ff947c746ca)
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/118175453/a4a65d46-8a63-4c1b-82b6-03015c045aea" alt="파트너-신청 gif" width="65%" align="left"/>
 
+#### 숙박업소를 등록하면 상품(객실)을 등록할 수 있습니다.
+#### 등록시 이미지는 최대 5개 등록이 가능합니다.
+#### 확인 버튼을 누르면 아래에서 등록한 상품(객실)을 확인할 수 있습니다.
 
-## [숙소 검색 페이지]
+<br clear="both"/>
+<br>
 
-![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/64b0c0e1-e507-4e5a-b45c-adda6bb398c1)
+### ✔상품(객실) 수정
 
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/118175453/5b16b64b-cb1e-4d63-936a-81e17d580540" alt="파트너-신청 gif" width="65%" align="left"/>
 
-## [숙소 상세 페이지]
+#### 수정 시 현재 선택한 이미지를 기준으로 슬라이드가 작동합니다.
+#### 초기화를 누르면 새로 입력했던 값들은 사라집니다.
 
-(빈방 있는 상태)
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/ab922c01-5f2c-44dd-bddf-b7dc1bf92d6d)
+<br clear="both"/>
+<br>
 
+### ✔숙박업소, 상품(객실) 삭제
 
-(빈방 없는 상태)
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/6889d4b7-9425-439b-8ae2-45e42f3234cc)
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/118175453/27e0807a-3a65-4ac8-b7b4-5e8ee644fd9e" alt="파트너-신청 gif" width="65%" align="left"/>
 
+#### 삭제 버튼을 누르면 알림창이 나오며 확인 여부를 묻습니다.
+#### 취소를 누르면 이벤트가 취소되며 확인을 누를 시 숙박업소, 상품(객실)이 삭제 됩니다.
 
-## [예약 페이지]
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/a7024633-3611-4fb9-bad5-a3aef426afb0)
+<br clear="both"/>
 
 
 
+## [ADMIN]
 
-(결제를 위한 문자 인증)
+### ✔대시보드 / 공지사항등록
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/132328765/d59fd5d1-c8ce-45ff-9f31-d4cdc1aedc53" width="65%" align="left">
 
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/dfc58195-c74e-4fd1-b833-998a2828e21a)
+#### &nbsp;&nbsp;대시보드를 이용해 이용현황을 한눈에 알아볼 수 있습니다.
+#### &nbsp;&nbsp;에디터를 이용한 공지사항 작성이 가능합니다.
 
+<br clear="both"/>
+<br>
 
-## [마이페이지]
+### ✔권한 변경 / 숙소삭제 
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/132328765/0f4813c8-655d-479d-90f6-b18bc0c7a0a3"  width="65%" align="left" >
 
-(내 정보)
+#### &nbsp;&nbsp;현재 회원 등급을 변경, 정보를 수정하고 계정을 정지 및 해제 할 수 있습니다. 
+#### &nbsp;&nbsp;간편하게 등록된 숙소이름을 검색하고 삭제 관리가 가능합니다.
 
+<br clear="both"/>
+<br>
 
+### ✔파트너 승인 / 예약 취소 승인 
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/132328765/0eb8fa07-fa14-440e-a192-9fcbb9d7da3a"  width="65%" align="left" >
 
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/c4ffb392-371d-4b12-940a-f2a3a8fb0b42)
 
 
-(예약내역)
+#### &nbsp;&nbsp;파트너승인과 동시에 등급 변경이 가능합니다.
+#### &nbsp;&nbsp;예약취소 요청 처리를 간편하게 할 수 있습니다.
 
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/82f5dfab-60f2-4e81-aa5a-911f4622164c)
+<br clear="both"/>
+<br>
 
+### ✔1:1 문의 / 리뷰 신고 관리 
+<img src="https://github.com/taeyoung0504/leisure_project1/assets/132328765/ec86e391-31a2-4c66-b599-ccdf0a9e39af"  width="65%" align="left" >
 
+#### &nbsp;&nbsp;답변 대기중인 1:1문의를 따로 볼수 있고 답변을 달 수 있습니다.
+#### &nbsp;&nbsp;부적절한 리뷰를 블라인드하여 관리 할 수 있습니다.
 
-(문의내역 _ 없는경우)
-
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/d384d21b-0475-4d64-a52a-9ccdccb53d82)
-
-
-(문의내역 작성)
-
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/bb35a2de-58a6-4684-904d-8e75ac91dac0)
-
-
-(문의내역 _ 있는경우)
-
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/4ee58a36-31ea-4a6c-b2df-aa2253f7d4be)
-
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/a00e19c7-d4f5-4422-bfc3-6e49d8a6c019)
-
-
-
-(파트너 권한 신청)
-
-![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/bc5493f5-9510-415f-8229-5657668c4f94)
-
-
-(파트너 권한 신청 _ 필수값 미입력 시)
-
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/a38ed9d3-8a82-44fc-a363-2edc3233b978)
-
-
-
-( 내 업소 예약 내역) 
-
-![image](https://github.com/taeyoung0504/leisure_Project/assets/128016593/211904ba-524a-4a88-ba9a-6c692775c437)
-
-
-
-# 기타 페이지 
-
-
-(대구 맛집 공공데이터를 이용한 식당 검색 페이지)
-
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/a29b36b5-5932-49fd-b409-c44e1b601a6f)
-
-# 관리자 페이지
-
-(대시보드)
-
-![image](https://github.com/taeyoung0504/leisure_project1/assets/128016593/b9b4b194-a148-4f83-925a-4584c5189f66)
-
-
-(공지사항)
-
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/48162033-fcbd-49dc-a2f9-ab4ba5e954c1)
-
-(공지사항_등록)
-
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/02907a57-10ee-4c3b-899c-571560ae17cc)
-
-
-(회원 관리_등급, 계정잠금 설정 가능)
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/300c1176-a094-4902-92dc-1c5872218783)
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/b94b8fa1-c51a-411b-801a-1b03e2114f8a)
-
-
-(등록 업체 관리)
-
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/be04e730-55d0-4785-8d0f-a0cc646626d3)
-
-
-(파트너 권한 신청 내역 관리)
-
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/603fbdd9-06b8-4508-881c-ec87ada0b101)
-
-
-(1:1 문의 관리)
-
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/37ef0b73-be38-496f-abfb-948f95ecd55d)
-
-(결제 취소 요청 처리)
-
-![image](https://github.com/taeyoung0504/DAEBAK/assets/128016593/f4209880-9b68-4386-bf62-e43c0a8ca1ac)
-
-
+<br clear="both"/>
